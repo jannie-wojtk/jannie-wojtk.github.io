@@ -1,0 +1,171 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <script>
+            // Data Layer
+            const Grains = {
+                Quinoa: 'Quinoa',
+                Barley: 'Barley',
+                Pasta: 'Pasta',
+                FarfallePasta: 'Farfalle Pasta'
+            }
+            
+            const Proteins = {
+                BlackBeans: 'Black Beans',
+                KidneyBeans: 'Kidney Beans',
+                Tofu: 'Tofu',
+                Chicken: 'Chicken',
+                Steak: 'Steak',
+                Pork: 'Pork',
+                ItalianSausage: 'Italian Sausage',
+                Eggs: 'Eggs',
+                PortabellaMushrooms: 'Portabella Mushrooms',
+                GroundTurkey: 'Ground Turkey'
+            }
+            
+            const Dairy = {
+                PlainGreekYogurt: 'Plain Greek Yogurt'
+            }
+            
+            const Sweeteners = {
+                MapleSyrup: 'Maple Syrup'
+            }
+            
+            const Vegetables = {
+                Brocolli: 'Brocolli',
+                BrusselSprouts: 'Brussel Sprouts',
+                BokChoy: 'Bok Choy',
+                Garlic: 'Garlic',
+                Onion: 'Onion',
+                RedBellPepper: 'Red Bell Pepper',
+                PoblanoPepper: 'Poblano Pepper',
+                JalapenoPepper: 'Jalapeno Pepper',
+                HabaneroPepper: 'Habanero Pepper',
+                Lettuce: 'Lettuce',
+                Kale: 'Kale',
+                Ginger: 'Ginger',
+                CrushedTomato: 'Crushed Tomato'
+            }
+            
+            const Broths = {
+                Chicken: 'Chicken Broth',
+                Vegetable: 'Vegetable Broth',
+                Beef: 'Beef Broth',
+                Mushroom: 'Mushroom Broth',
+            }
+            
+            const Sauces = {
+                Alfredo: 'Alfredo Sauce',
+                Tomato: 'Tomato Sauce',
+                Hoisin: 'Hoisin Sauce',
+                Soy: 'Soy Sauce'
+            }
+            
+            const Spices = {
+                ChiliPowder: 'Chili Power',
+                Cumin: 'Cumin',
+                RedPepperFlakes: 'Red Pepper Flakes',
+                Salt: 'Salt',
+                BlackPepper: 'Black Pepper',
+            }
+            
+            const Oils = {
+                Vegetable: 'Vegetable Oil',
+                Olive: 'Olive Oil',
+                Sesame: 'Sesame Oil'
+            }
+            
+            const Fruit = {
+                Berries: 'Berries (Seasonal)'
+            }
+            
+            class Recipe {
+                Name = '';
+                Description = '';
+                Ingredients = [];
+                
+                constructor(name, description, ingredients) {
+                    this.Name = name;
+                    this.Description = description;
+                    this.Ingredients = ingredients;
+                }
+            }
+            
+            const Recipies = {
+                ItalianSausageWhiteSauceKalePasta: new Recipe (
+                    'Italian Sausage Farfalle Alfredo',
+                    '',
+                    [Proteins.ItalianSausage, Oils.Olive, Sauces.Alfredo, Grains.FarfallePasta, Vegetables.Kale]
+                ),
+                Chili: new Recipe (
+                    'Chili',
+                    '',
+                    [Proteins.GroundTurkey, Proteins.PortabellaMuhrooms, Broths.Mushroom, Broths.Beef, Sauces.Soy, Oils.Olive, Vegetables.CrushedTomato, Vegetables.Onion, Vegetables.JalapenoPepper, Vegetables.HabaneroPepper, Vegetables.PoblanoPepper, Grains.Barley]
+                ),
+                BerryParfait: new Recipe (
+                    'Berry Parfait',
+                    '',
+                    [Dairy.PlainGreekYogurt, Fruit.Berries, Sweeteners.MapleSyrup]
+                )
+            }
+        </script>
+        
+        <script>
+            console.log('Refreshing in 30 seconds');
+            setTimeout(() => console.log('Refreshing in 10 seconds'), 20000);
+            setTimeout(() => { document.location = document.location }, 30000);
+        </script>
+    </head>
+    <body>
+        <div id="content"></div>
+    </body>
+    <script>
+        // Presentation Layer
+        function buildRecipeList(recipies) {
+            const ingredientsDelimiter = ', ';
+            const descriptionListElement = document.createElement('dl');
+            
+            recipies.forEach((recipe) => {
+                const recipeTitleElement = document.createElement('dt');
+                const recipeDescriptionElement = document.createElement('dd');
+                const recipeDescriptionText =
+                    recipe.Ingredients.slice(0, -1).join(ingredientsDelimiter)
+                    + ingredientsDelimiter
+                    + ' and '
+                    + recipe.Ingredients.slice(-1);
+                
+                recipeTitleElement.textContent = recipe.Name;
+                recipeDescriptionElement.textContent =  recipeDescriptionText;
+                
+                descriptionListElement.appendChild(recipeTitleElement);
+                descriptionListElement.appendChild(recipeDescriptionElement);
+            });
+            
+            return descriptionListElement;
+        }
+        
+        // Render
+        const currentRecipeList = [
+            Recipies.ItalianSausageWhiteSauceKalePasta,
+            Recipies.Chili,
+            Recipies.BerryParfait
+        ];
+        
+        document.querySelector('#content').appendChild(buildRecipeList(currentRecipeList));
+    </script>
+    <style>
+        dt {
+            font-weight: bold;
+            margin-top: 1em;
+        }
+        
+        dt:first-child {
+            margin-top: 0;
+        }
+        
+        dd {
+            padding-left: 0;
+            margin-left: 0;
+        }
+    </style>
+</html>
