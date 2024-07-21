@@ -122,7 +122,7 @@
                 }
             }
             
-            const Recipies = {
+            const Recipes = {
                 ItalianSausageWhiteSauceKalePasta: new Recipe (
                     'Italian Sausage Farfalle Alfredo',
                     'Hot Italian Sausage baked and sliced before being added to simmering alfredo sauce and farfalle.',
@@ -207,11 +207,11 @@
     </body>
     <script>
         // Presentation Layer
-        function buildRecipeList(recipies) {
+        function buildRecipeList(recipes) {
             const ingredientsDelimiter = ', ';
             const descriptionListElement = document.createElement('dl');
             
-            recipies.forEach((recipe) => {
+            recipes.forEach((recipe) => {
                 const recipeTitleElement = document.createElement('dt');
                 const recipeDescriptionElement = document.createElement('dd');
                 const recipeDescriptionText =
@@ -231,7 +231,7 @@
         }
         
         // Render
-        const currentRecipeList = Object.values(Recipies);
+        const currentRecipeList = Object.values(Recipes);
         
         document.querySelector('#content').appendChild(buildRecipeList(currentRecipeList));
     </script>
