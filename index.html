@@ -9,7 +9,8 @@
                 Pasta: 'Pasta',
                 FarfallePasta: 'Farfalle Pasta',
                 TortillaChips: 'Tortilla Chips',
-                Rice: 'Rice'
+                Rice: 'Rice',
+                Couscous: 'Couscous'
             }
             
             const Proteins = {
@@ -26,7 +27,9 @@
                 Beef: 'Beef',
                 Salmon: 'Salmon',
                 Tuna: 'Tuna',
-                VeggieSausage: 'Veggie Sausage'
+                VeggieSausage: 'Veggie Sausage',
+                Falafel: 'Falafel',
+                Hummus: 'Hummus'
             }
             
             const Dairy = {
@@ -56,7 +59,9 @@
                 Lettuce: 'Lettuce',
                 CherryTomato: 'Cherry Tomato',
                 Cauliflower: 'Cauliflower',
-                Carrot: 'Carrot'
+                Carrot: 'Carrot',
+                Cucumber: 'Cucumber',
+                RedCabbage: 'Red Cabbage'
             }
             
             const Broths = {
@@ -107,7 +112,7 @@
             const Recipies = {
                 ItalianSausageWhiteSauceKalePasta: new Recipe (
                     'Italian Sausage Farfalle Alfredo',
-                    '',
+                    'Hot Italian Sausage baked and sliced before being added to simmering alfredo sauce and farfalle.',
                     [Proteins.ItalianSausage, Oils.Olive, Sauces.Alfredo, Grains.FarfallePasta, Vegetables.Kale]
                 ),
                 Chili: new Recipe (
@@ -133,22 +138,22 @@
                 ChickenAlfredo: new Recipe(
                     'Chicken Alfredo',
                     '',
-                    [Proteins.Chicken, Sauces.Alfredo, Vegetables.Brocolli, Grains.Pasta]
+                    [Proteins.Chicken, Oils.Sesame, Sauces.Alfredo, Vegetables.Brocolli, Grains.Pasta]
                 ),
                 ChickenStirFry: new Recipe(
                     'Chicken Stir Fry',
                     '',
-                    [Proteins.Chicken,  Vegetables.RedBellPepper, Vegetables.Onion, Vegetables.Garlic, Vegetables.Ginger, Vegetables.Brocolli, Grains.Rice]
+                    [Proteins.Chicken, Oils.Sesame, Vegetables.RedBellPepper, Vegetables.Onion, Vegetables.Garlic, Vegetables.Ginger, Vegetables.Brocolli, Grains.Rice]
                 ),
                 TofuStirFry: new Recipe(
                     'Tofu Stir Fry',
                     '',
-                    [Proteins.Tofu,  Vegetables.RedBellPepper, Vegetables.Onion, Vegetables.Garlic, Vegetables.Ginger, Vegetables.Brocolli, Grains.Rice]
+                    [Proteins.Tofu, Oils.Sesame, Vegetables.RedBellPepper, Vegetables.Onion, Vegetables.Garlic, Vegetables.Ginger, Vegetables.Brocolli, Grains.Rice]
                 ),
                 SalmonBrusselSprouts: new Recipe(
                     'Baked Salmon',
                     '',
-                    [Proteins.Salmon, Vegetables.BrusselSprouts]
+                    [Proteins.Salmon, Oils.Olive, Vegetables.BrusselSprouts]
                 ),
                 Steak:  new Recipe(
                     'Sirloin Steak and Baked Potato',
@@ -164,11 +169,17 @@
                     'Sheperdstown Eggs',
                     '',
                     [Grains.Quinoa, Vegetables.Kale, Proteins.Eggs, Proteins.VeggieSausage]
+                ),
+                FalafelPlatter: new Recipe(
+                    'Falafel Platter',
+                    '',
+                    [Proteins.Falafel, Proteins.Hummus, Vegetables.Cucumber, Vegetables.RedCabbage, Grains.Couscous]
                 )
             }
         </script>
     </head>
     <body>
+        <h1>Food we can make</h1>
         <div id="content"></div>
     </body>
     <script>
@@ -202,9 +213,22 @@
         document.querySelector('#content').appendChild(buildRecipeList(currentRecipeList));
     </script>
     <style>
+        body {
+            font-family: sans-serif;
+        }
+        
+        h1 {
+            font-size: 2em;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+        
         dt {
+        font-size: 1.125em;
             font-weight: bold;
             margin-top: 1em;
+            text-decoration: underline;
+            text-transform: uppercase;
         }
         
         dt:first-child {
