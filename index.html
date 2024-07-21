@@ -7,7 +7,9 @@
                 Quinoa: 'Quinoa',
                 Barley: 'Barley',
                 Pasta: 'Pasta',
-                FarfallePasta: 'Farfalle Pasta'
+                FarfallePasta: 'Farfalle Pasta',
+                TortillaChips: 'Tortilla Chips',
+                Rice: 'Rice'
             }
             
             const Proteins = {
@@ -20,7 +22,11 @@
                 ItalianSausage: 'Italian Sausage',
                 Eggs: 'Eggs',
                 PortabellaMushrooms: 'Portabella Mushrooms',
-                GroundTurkey: 'Ground Turkey'
+                GroundTurkey: 'Ground Turkey',
+                Beef: 'Beef',
+                Salmon: 'Salmon',
+                Tuna: 'Tuna',
+                VeggieSausage: 'Veggie Sausage'
             }
             
             const Dairy = {
@@ -44,7 +50,13 @@
                 Lettuce: 'Lettuce',
                 Kale: 'Kale',
                 Ginger: 'Ginger',
-                CrushedTomato: 'Crushed Tomato'
+                CrushedTomato: 'Crushed Tomato',
+                Potato: 'Potato',
+                Tomato: 'Tomato',
+                Lettuce: 'Lettuce',
+                CherryTomato: 'Cherry Tomato',
+                Cauliflower: 'Cauliflower',
+                Carrot: 'Carrot'
             }
             
             const Broths = {
@@ -58,7 +70,8 @@
                 Alfredo: 'Alfredo Sauce',
                 Tomato: 'Tomato Sauce',
                 Hoisin: 'Hoisin Sauce',
-                Soy: 'Soy Sauce'
+                Soy: 'Soy Sauce',
+                CaesarDressing: 'Caesar Dressing'
             }
             
             const Spices = {
@@ -76,7 +89,7 @@
             }
             
             const Fruit = {
-                Berries: 'Berries (Seasonal)'
+                Berries: 'Berries'
             }
             
             class Recipe {
@@ -100,20 +113,59 @@
                 Chili: new Recipe (
                     'Chili',
                     '',
-                    [Proteins.GroundTurkey, Proteins.PortabellaMuhrooms, Broths.Mushroom, Broths.Beef, Sauces.Soy, Oils.Olive, Vegetables.CrushedTomato, Vegetables.Onion, Vegetables.JalapenoPepper, Vegetables.HabaneroPepper, Vegetables.PoblanoPepper, Grains.Barley]
+                    [Proteins.GroundTurkey, Proteins.PortabellaMushrooms, Broths.Mushroom, Broths.Beef, Sauces.Soy, Oils.Olive, Vegetables.CrushedTomato, Vegetables.Onion, Vegetables.JalapenoPepper, Vegetables.HabaneroPepper, Vegetables.PoblanoPepper, Grains.TortillaChips]
                 ),
                 BerryParfait: new Recipe (
                     'Berry Parfait',
                     '',
                     [Dairy.PlainGreekYogurt, Fruit.Berries, Sweeteners.MapleSyrup]
+                ),
+                TunaCaesarSalad: new Recipe(
+                    'Tuna Caesar Salad',
+                    '',
+                    [Proteins.Tuna, Vegetables.CherryTomato, Vegetables.Lettuce, Sauces.CaesarDressing]
+                ),
+                GarlicPotatoSoup: new Recipe(
+                    'Garlic Potato Soup',
+                    '',
+                    [Vegetables.Garlic, Vegetables.Potato, Broths.Chicken]
+                ),
+                ChickenAlfredo: new Recipe(
+                    'Chicken Alfredo',
+                    '',
+                    [Proteins.Chicken, Sauces.Alfredo, Vegetables.Brocolli, Grains.Pasta]
+                ),
+                ChickenStirFry: new Recipe(
+                    'Chicken Stir Fry',
+                    '',
+                    [Proteins.Chicken,  Vegetables.RedBellPepper, Vegetables.Onion, Vegetables.Garlic, Vegetables.Ginger, Vegetables.Brocolli, Grains.Rice]
+                ),
+                TofuStirFry: new Recipe(
+                    'Tofu Stir Fry',
+                    '',
+                    [Proteins.Tofu,  Vegetables.RedBellPepper, Vegetables.Onion, Vegetables.Garlic, Vegetables.Ginger, Vegetables.Brocolli, Grains.Rice]
+                ),
+                SalmonBrusselSprouts: new Recipe(
+                    'Baked Salmon',
+                    '',
+                    [Proteins.Salmon, Vegetables.BrusselSprouts]
+                ),
+                Steak:  new Recipe(
+                    'Sirloin Steak and Baked Potato',
+                    '',
+                    [Proteins.Steak, Vegetables.Potato, Vegetables.Cauliflower]
+                ),
+                BeefMushroomSoup: new Recipe(
+                    'Beef and Mushroom Soup',
+                    '',
+                    [Proteins.Beef, Proteins.PortabellaMushrooms, Broths.Beef, Broths.Mushroom, Vegetables.Onion, Vegetables.Carrot, Grains.Barley]
+                ),
+                ShepherdstownEggs: new Recipe(
+                    'Sheperdstown Eggs',
+                    '',
+                    [Grains.Quinoa, Vegetables.Kale, Proteins.Eggs, Proteins.VeggieSausage]
                 )
             }
-        </script>
-        
-        <script>
-            console.log('Refreshing in 30 seconds');
-            setTimeout(() => console.log('Refreshing in 10 seconds'), 20000);
-            setTimeout(() => { document.location = document.location }, 30000);
         </script>
     </head>
     <body>
@@ -145,11 +197,7 @@
         }
         
         // Render
-        const currentRecipeList = [
-            Recipies.ItalianSausageWhiteSauceKalePasta,
-            Recipies.Chili,
-            Recipies.BerryParfait
-        ];
+        const currentRecipeList = Object.values(Recipies);
         
         document.querySelector('#content').appendChild(buildRecipeList(currentRecipeList));
     </script>
