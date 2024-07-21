@@ -2,15 +2,18 @@
 <html>
     <head>
         <script>
+            // Gluten may appear as Modified Food Starch, Natural Flavoring, or Yeast Extract
+            
+        
             // Data Layer
             const Grains = {
                 Quinoa: 'Quinoa',
-                Barley: 'Barley',
-                Pasta: 'Pasta',
-                FarfallePasta: 'Farfalle Pasta',
-                TortillaChips: 'Tortilla Chips',
+                Barley: 'Barley', // Gluten
+                Pasta: 'Pasta', // Gluten
+                FarfallePasta: 'Farfalle Pasta', // Gluten
+                TortillaChips: 'Tortilla Chips', // Maybe gluten
                 Rice: 'Rice',
-                Couscous: 'Couscous'
+                Couscous: 'Couscous' // Gluten
             }
             
             const Proteins = {
@@ -27,19 +30,24 @@
                 Beef: 'Beef',
                 Salmon: 'Salmon',
                 Tuna: 'Tuna',
-                VeggieSausage: 'Veggie Sausage',
-                Falafel: 'Falafel',
-                Hummus: 'Hummus'
+                VeggieSausage: 'Veggie Sausage', // Maybe Gluten
+                Falafel: 'Falafel', // Gluten
+                Hummus: 'Hummus',
+                BlackBeanBurger: 'Black Bean Burger',
+                PorkLoin: 'Pork Loin'
             }
             
+            // Maybe gluten
             const Dairy = {
                 PlainGreekYogurt: 'Plain Greek Yogurt'
             }
             
+            // Maybe gluten
             const Sweeteners = {
                 MapleSyrup: 'Maple Syrup'
             }
-            
+           
+            // Gluten free           
             const Vegetables = {
                 Brocolli: 'Brocolli',
                 BrusselSprouts: 'Brussel Sprouts',
@@ -55,6 +63,7 @@
                 Ginger: 'Ginger',
                 CrushedTomato: 'Crushed Tomato',
                 Potato: 'Potato',
+                Fries: 'French Fries',
                 Tomato: 'Tomato',
                 Lettuce: 'Lettuce',
                 CherryTomato: 'Cherry Tomato',
@@ -64,6 +73,7 @@
                 RedCabbage: 'Red Cabbage'
             }
             
+            // Maybe gluten
             const Broths = {
                 Chicken: 'Chicken Broth',
                 Vegetable: 'Vegetable Broth',
@@ -72,13 +82,14 @@
             }
             
             const Sauces = {
-                Alfredo: 'Alfredo Sauce',
+                Alfredo: 'Alfredo Sauce', // Dairy, Gluten
                 Tomato: 'Tomato Sauce',
-                Hoisin: 'Hoisin Sauce',
-                Soy: 'Soy Sauce',
-                CaesarDressing: 'Caesar Dressing'
+                Hoisin: 'Hoisin Sauce', // Gluten
+                Soy: 'Soy Sauce', // Gluten
+                CaesarDressing: 'Caesar Dressing' // Dairy, gluten
             }
             
+            // Mixes may contain Wheat Starch as "anti-caking agent"
             const Spices = {
                 ChiliPowder: 'Chili Power',
                 Cumin: 'Cumin',
@@ -87,12 +98,14 @@
                 BlackPepper: 'Black Pepper',
             }
             
+            // No gluten
             const Oils = {
                 Vegetable: 'Vegetable Oil',
                 Olive: 'Olive Oil',
                 Sesame: 'Sesame Oil'
             }
             
+            // No gluten
             const Fruit = {
                 Berries: 'Berries'
             }
@@ -174,6 +187,16 @@
                     'Falafel Platter',
                     '',
                     [Proteins.Falafel, Proteins.Hummus, Vegetables.Cucumber, Vegetables.RedCabbage, Grains.Couscous]
+                ),
+                BlackBeanBurger: new Recipe(
+                    'Black Bean Burger with Fries',
+                    '',
+                    [Proteins.BlackBeanBurger, Vegetables.Lettuce, Vegetables.Tomato, Vegetables.Fries]
+                ),
+                PorkLoin: new Recipe(
+                    'Pork Loin',
+                    '',
+                    [Proteins.PorkLoin, Vegetables.Potato, Vegetables.BrusselSprouts, Grains.Rice]
                 )
             }
         </script>
