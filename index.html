@@ -13,7 +13,8 @@
                 FarfallePasta: 'Farfalle Pasta', // Gluten
                 TortillaChips: 'Tortilla Chips', // Maybe gluten
                 Rice: 'Rice',
-                Couscous: 'Couscous' // Gluten
+                Couscous: 'Couscous', // Gluten,
+                PizzaDough: 'Pizza Dough' // Gluten
             }
             
             const Proteins = {
@@ -70,7 +71,8 @@
                 Cauliflower: 'Cauliflower',
                 Carrot: 'Carrot',
                 Cucumber: 'Cucumber',
-                RedCabbage: 'Red Cabbage'
+                RedCabbage: 'Red Cabbage',
+                YellowZucchini: 'Yellow Zucchini'
             }
             
             // Maybe gluten
@@ -86,10 +88,11 @@
                 Tomato: 'Tomato Sauce',
                 Hoisin: 'Hoisin Sauce', // Gluten
                 Soy: 'Soy Sauce', // Gluten
-                CaesarDressing: 'Caesar Dressing' // Dairy, gluten
+                CaesarDressing: 'Caesar Dressing', // Dairy, gluten
+                Pesto: 'Pesto'
             }
             
-            // Mixes may contain Wheat Starch as "anti-caking agent"
+            // Mixes may contain Wheat Starch as an "anti-caking agent"
             const Spices = {
                 ChiliPowder: 'Chili Power',
                 Cumin: 'Cumin',
@@ -197,7 +200,13 @@
                     'Pork Loin',
                     '',
                     [Proteins.PorkLoin, Vegetables.Potato, Vegetables.BrusselSprouts, Grains.Rice]
-                )
+                ),
+                SummertimeAndTheLivingIsEasySquashPizza: new Recipe(
+                    'Summertime and the Living is Easy Squash Pizza',
+                    'Vegetarian (not vegan)',
+                    [Grains.PizzaDough, Sauces.Pesto, Vegetables.YellowZucchini, Vegetables.CherryTomato, Oils.Olive]
+                ),
+
             }
         </script>
     </head>
