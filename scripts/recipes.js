@@ -10,11 +10,12 @@ class Recipe {
         this.Ingredients = ingredients;
     }
     
-    hasGluten() {
+    HasGluten() {
+        console.log(this.Ingredients);
         return this.Ingredients.some(x => x.HasGluten);
     }
     
-    hasDairy() {
+    HasDairy() {
         return this.Ingredients.some(x => x.HasDairy);
     }
 }

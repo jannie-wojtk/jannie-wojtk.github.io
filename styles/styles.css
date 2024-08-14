@@ -27,3 +27,45 @@ dd {
     padding-left: 0;
     margin-left: 0;
 }
+
+span.gluten-free {
+    color: goldenrod;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: .375em;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    
+    /* Keep these em values the same */
+    /* Line height calc is half of the border width (matters at small sizes) */
+    border: 2px solid goldenrod;
+    height: 1.625em;
+    line-height: calc(1.625em + 1px);
+    width: 1.625em;
+}
+
+
+dt span {
+    margin-left: 1em;
+    margin-bottom: .5em;
+}
+
+.error-banner {
+    background: red;
+    color: white;
+    font-weight: bold;
+    height: 4em;
+    left: 0;
+    line-height: 2em;
+    position: fixed;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.error-banner + h1 {
+    margin-top: 3em;
+}
