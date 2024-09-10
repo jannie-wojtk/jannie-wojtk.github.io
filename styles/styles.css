@@ -51,8 +51,15 @@ dt span {
     margin-bottom: .5em;
 }
 
-.error-banner {
+.banner--success {
+    background: green;
+}
+
+.banner--warning {
     background: red;
+}
+
+.banner {
     color: white;
     font-weight: bold;
     height: 4em;
@@ -66,6 +73,6 @@ dt span {
     width: 100%;
 }
 
-.error-banner + h1 {
+.banner + h1 {
     margin-top: 3em;
 }
