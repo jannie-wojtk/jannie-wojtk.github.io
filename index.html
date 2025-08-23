@@ -1,17 +1,21 @@
 <!DOCTYPE html5>
 <html>
     <head>
-        <script src="./scripts/ingredients.js"></script>
+        <script src="./scripts/ingredients.js" charset='utf-8'></script>
         <script src="./scripts/recipes.js"></script>
         <link href="./styles/styles.css" rel="stylesheet" />
+        <link href="./styles/supplyChainStyles.css" rel="stylesheet" />
     </head>
     <body>
-        <!--
-        <div class="error-banner">The kitchen is currently closed.<br />COVID has disrupted our supply chains. Also, the company car exploded.</div>
-        -->
-        <div class="banner banner--success">The kitchen is currently open.<br />COVID is officially over and the new company car has a moonroof.</div>
-        <h1>Food we can make</h1>
-        <div id="content"></div>
+        <div class="banner banner--warning">The kitchen has a new supply chain and will be doing the best it can.
+		</div>
+		
+		<h1>Ingredients We Need to Use</h1>
+		<div id="supply-chain-content"></div>
+		
+        <h1 style="text-decoration: line-through;"><u>Food we can make</u></h1>
+        <div style="text-decoration: line-through;" id="content"></div>
     </body>
     <script src="./scripts/render.js"></script>
+    <script src="./scripts/renderSupplyChain.js"></script>
 </html>

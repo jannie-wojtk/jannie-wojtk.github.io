@@ -50,28 +50,6 @@ function getGlutenFreeFlag() {
     return element;
 }
 
-/*
-
-function buildRecipeIngredientList(ingredients) {
-    
-}
-
-function groupIngredientsByTag(ingredients) {
-    const groups = ['Grain', 'Protein', 'Vegetable', 'Spice', 'Oil', 'Broth'];
-    var result = {};
-    
-    groups.forEach(x => result[x] = filterIngredientsByTag(ingredients, x));
-    
-    // { Spice: [...], Protein: [...], ... }
-    return result;
-}
-
-function filterIngredientsByTag(ingredients, tag) {
-    return ingredients.filter(x => x.HasTag(tag));
-}
-
-*/
-
 // Render
 const currentRecipeList = Object.values(window.Recipes);
 
