@@ -3,8 +3,6 @@ function buildRecipeList(recipes) {
     const descriptionListElement = document.createElement('dl');
     
     recipes.forEach((recipe) => {
-        console.log(recipe.Name);
-        console.log(getFlagElements(recipe));
         const recipeTitleElement = document.createElement('dt');
         const recipeDescriptionElement = document.createElement('dd');
         const recipeDescriptionText =

@@ -126,5 +126,3 @@ window.Ingredients = (function() {
     
     return result;
 }());
-
-console.log(Ingredients);

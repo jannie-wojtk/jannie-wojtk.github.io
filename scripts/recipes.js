@@ -11,7 +11,6 @@ class Recipe {
     }
     
     HasGluten() {
-        console.log(this.Ingredients);
         return this.Ingredients.some(x => x.HasGluten);
     }
     
@@ -102,5 +101,3 @@ window.Recipes = {
         [Ingredients.PizzaDough, Ingredients.Pesto, Ingredients.YellowZucchini, Ingredients.CherryTomato, Ingredients.OliveOil]
     ),
 }
-
-console.log(Recipes);
