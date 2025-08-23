@@ -14,7 +14,7 @@ const template = `
 	<div id="supply-chain-list__container">
 	${supplyChainList.map(ingredient => `
 	  <div class="supply-chain-ingredient">
-	    <span>${ingredient.Name}</span>
+	    <span>${ingredient.Name}!!!</span>
 	  </div>
 	`).join('')}
 	</div>
