@@ -17,6 +17,29 @@ class Recipe {
     HasDairy() {
         return this.Ingredients.some(x => x.HasDairy);
     }
+	
+	GetIngredientsString() {
+		var list = this.Ingredients;
+		var result = '';
+		
+		if(list.length === 1)
+			result = this.Ingredients[0].Name;
+
+		if(list.length === 2)
+			result = `${this.Ingredients[0].Name} and ${this.Ingredients[1].Name}`;
+		
+		if(list.length > 2) {
+			let delimeter = ', ';
+			let allButLast = this.Ingredients.slice(0, -1);
+			let last = this.Ingredients.slice(-1);
+
+			result = 
+			  allButLast.map(x => x.Name).join(delimeter)
+				+ `${delimeter} and ${last[0].Name}`;
+		}
+		
+		return result;
+	}
 }
 
 window.Recipes = {
@@ -101,3 +124,20 @@ window.Recipes = {
         [Ingredients.PizzaDough, Ingredients.Pesto, Ingredients.YellowZucchini, Ingredients.CherryTomato, Ingredients.OliveOil]
     ),
 }
+
+window.SupplyChainRecipes = [
+	Ingredients.Cucumber,
+	Ingredients.Dill,
+	Ingredients.Lettuce,
+	Ingredients.NapaCabbage,
+	Ingredients.SweetCorn,
+	Ingredients.ShishitoPepper,
+	Ingredients.LionsManeMushroom,
+	Ingredients.Eggs
+].map(i => 
+    new Recipe(
+	    `Something with ${i.Name}`,
+		'',
+		[i]
+	)
+);
