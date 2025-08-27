@@ -57,7 +57,7 @@ window.IngredientList = [
     new Ingredient("Cherry Tomato", false, false, [Tag.Vegetable]),
     new Ingredient("Chicken", false, false, [Tag.Protein, Tag.Meat]),
     new Ingredient("Chicken Broth", false, true, [Tag.Broth, Tag.Meat]),
-    new Ingredient("Chili Power", false, true, [Tag.Spice]),
+    new Ingredient("Chili Powder", false, true, [Tag.Spice]),
     new Ingredient("Couscous", false, false, [Tag.Grain]),
     new Ingredient("Crushed Tomato", false, false, [Tag.Vegetable]),
     new Ingredient("Cucumber", false, false, [Tag.Vegetable]),
