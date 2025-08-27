@@ -28,7 +28,7 @@ window.Recipes = {
     Chili: new Recipe (
         'Chili',
         '',
-        [Ingredients.GroundTurkey, Ingredients.PortabellaMushrooms, Ingredients.MushroomBroth, Ingredients.BeefBroth, Ingredients.SoySauce, Ingredients.OliveOil, Ingredients.CrushedTomato, Ingredients.Onion, Ingredients.JalapenoPepper, Ingredients.HabaneroPepper, Ingredients.PoblanoPepper, Ingredients.BlackBeans, Ingredients.KidneyBeans, Ingredients.TortillaChips]
+        [Ingredients.GroundTurkey, Ingredients.PortabellaMushrooms, Ingredients.MushroomBroth, Ingredients.BeefBroth, Ingredients.SoySauce, Ingredients.OliveOil, Ingredients.CrushedTomato, Ingredients.Onion, Ingredients.JalapenoPepper, Ingredients.HabaneroPepper, Ingredients.PoblanoPepper, Ingredients.RedBellPepper, Ingredients.Cumin, Ingredients.BlackBeans, Ingredients.KidneyBeans, Ingredients.TortillaChips]
     ),
     BerryParfait: new Recipe (
         'Berry Parfait',
