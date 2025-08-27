@@ -39,7 +39,7 @@ class Ingredient {
     }
 }
 
-var IngredientList = [
+window.IngredientList = [
     new Ingredient("Alfredo Sauce", true, true, [Tag.Sauce]),
     new Ingredient("Barley", false, true, [Tag.Grain]),
     new Ingredient("Beef", false, false, [Tag.Protein, Tag.Meat]),
@@ -65,7 +65,7 @@ var IngredientList = [
     new Ingredient("Dill", false, false, [Tag.Herb]),
     new Ingredient("Eggs", true, false, [Tag.Protein, Tag.Dairy]),
     new Ingredient("Falafel", false, true, [Tag.Protein, Tag.Grain]),
-    new Ingredient("Farfalle Pasta", false, false, [Tag.Grain, Tag.Pasta]),
+    new Ingredient("Farfalle Pasta", false, true, [Tag.Grain, Tag.Pasta]),
     new Ingredient("French Fries", false, true, [Tag.Vegetable]),
     new Ingredient("Garlic", false, false, [Tag.Spice, Tag.Vegetable]),
     new Ingredient("Ginger", false, false, [Tag.Spice, Tag.Vegetable]),
@@ -119,8 +119,8 @@ var IngredientList = [
 window.Ingredients = (function() {
     var result = {};
     
-    for(var i in IngredientList) {
-        var ingredient = IngredientList[i];
+    for(var i in window.IngredientList) {
+        var ingredient = window.IngredientList[i];
         result[ingredient.Key] = ingredient;
     }
     

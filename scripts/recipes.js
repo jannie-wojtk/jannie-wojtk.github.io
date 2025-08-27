@@ -17,29 +17,6 @@ class Recipe {
     HasDairy() {
         return this.Ingredients.some(x => x.HasDairy);
     }
-	
-	GetIngredientsString() {
-		var list = this.Ingredients;
-		var result = '';
-		
-		if(list.length === 1)
-			result = this.Ingredients[0].Name;
-
-		if(list.length === 2)
-			result = `${this.Ingredients[0].Name} and ${this.Ingredients[1].Name}`;
-		
-		if(list.length > 2) {
-			let delimeter = ', ';
-			let allButLast = this.Ingredients.slice(0, -1);
-			let last = this.Ingredients.slice(-1);
-
-			result = 
-			  allButLast.map(x => x.Name).join(delimeter)
-				+ `${delimeter} and ${last[0].Name}`;
-		}
-		
-		return result;
-	}
 }
 
 window.Recipes = {
@@ -51,7 +28,7 @@ window.Recipes = {
     Chili: new Recipe (
         'Chili',
         '',
-        [Ingredients.GroundTurkey, Ingredients.PortabellaMushrooms, Ingredients.MushroomBroth, Ingredients.BeefBroth, Ingredients.SoySauce, Ingredients.OliveOil, Ingredients.CrushedTomato, Ingredients.Onion, Ingredients.JalapenoPepper, Ingredients.HabaneroPepper, Ingredients.PoblanoPepper, Ingredients.TortillaChips]
+        [Ingredients.GroundTurkey, Ingredients.PortabellaMushrooms, Ingredients.MushroomBroth, Ingredients.BeefBroth, Ingredients.SoySauce, Ingredients.OliveOil, Ingredients.CrushedTomato, Ingredients.Onion, Ingredients.JalapenoPepper, Ingredients.HabaneroPepper, Ingredients.PoblanoPepper, Ingredients.BlackBeans, Ingredients.KidneyBeans, Ingredients.TortillaChips]
     ),
     BerryParfait: new Recipe (
         'Berry Parfait',
@@ -124,6 +101,8 @@ window.Recipes = {
         [Ingredients.PizzaDough, Ingredients.Pesto, Ingredients.YellowZucchini, Ingredients.CherryTomato, Ingredients.OliveOil]
     ),
 }
+
+window.RecipeList = Object.values(window.Recipes).sort((a, b) => a.Name.localeCompare(b.Name));
 
 window.SupplyChainRecipes = [
 	Ingredients.Cucumber,

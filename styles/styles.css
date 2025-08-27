@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     margin: 0 auto;
-    width: 500px;
+    width: 1000px;
 }
 
 h1 {
@@ -80,4 +80,8 @@ dt span {
 
 .banner + h1 {
     margin-top: 2em;
+}
+
+#content {
+	display: flex;
 }
